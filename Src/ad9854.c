@@ -204,6 +204,14 @@ void AD9854_Init(void)
 //说明：   该算法位多字节相乘算法，有公式FTW = (Desired Output Frequency × 2N)/SYSCLK
 //         得到该算法，其中N=48，Desired Output Frequency 为所需要的频率，即Freq，SYSCLK
 //         为可编程的系统时钟，FTW为48Bit的频率控制字，即FreqWord[6]
+
+// Function Name: void Freq_convert(long Freq)
+// Function Purpose: Conversion of sine signal frequency data
+// Input Parameters: Freq - The frequency to be converted, ranging from 0 to SYSCLK/2
+// Output Parameters: None, but affects the value of the global variable FreqWord[6]
+// Explanation: This algorithm is a multi-byte multiplication algorithm, with the formula FTW = (Desired Output Frequency × 2^N) / SYSCLK
+// where N = 48, Desired Output Frequency is the desired frequency, i.e., Freq, and SYSCLK
+// is the programmable system clock. FTW is a 48-bit frequency control word, i.e., FreqWord[6]
 //====================================================================================
 void Freq_convert(long Freq)
 {
