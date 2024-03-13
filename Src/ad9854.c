@@ -286,6 +286,16 @@ void AD9854_SetSine(ulong Freq, uint Shape)
 //         为可编程的系统时钟，FTW为48Bit的频率控制字，即FreqWord[6]
 //注意：   该函数与上面函数的区别为该函数的入口参数为double，可使信号的频率更精确
 //         谷雨建议在100HZ以下用本函数，在高于100HZ的情况下用函数void Freq_convert(long Freq)
+// Function Name: void Freq_double_convert(double Freq)
+// Function Purpose: Conversion of sine signal frequency data
+// Input Parameters: Freq - The frequency to be converted, ranging from 0 to SYSCLK/2
+// Output Parameters: None, but affects the value of the global variable FreqWord[6]
+// Explanation: This function is derived from the formula FTW = (Desired Output Frequency × 2^N) / SYSCLK,
+// where N = 48, Desired Output Frequency is the desired frequency, i.e., Freq, and SYSCLK
+// is the programmable system clock. FTW is a 48-bit frequency control word, i.e., FreqWord[6].
+// Attention: The difference between this function and the previous function is that the input parameter of this function is double,
+// which allows for more precise signal frequency. It is recommended to use this function for frequencies below 100Hz,
+// and use the function void Freq_convert(long Freq) for frequencies higher than 100Hz.
 //====================================================================================
 void Freq_double_convert(double Freq)
 {
