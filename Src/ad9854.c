@@ -218,7 +218,7 @@ void Freq_convert(long Freq)
     ulong FreqBuf;
     ulong Temp = Freq_mult_ulong;
 
-    uchar Array_Freq[4];			     //将输入频率因子分为四个字节
+    uchar Array_Freq[4];			     //将输入频率因子分为四个字节 Split the input frequency factor into four bytes" in English.
     Array_Freq[0] = (uchar)Freq;
     Array_Freq[1] = (uchar)(Freq >> 8);
     Array_Freq[2] = (uchar)(Freq >> 16);
