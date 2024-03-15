@@ -218,7 +218,7 @@ void Freq_convert(long Freq)
     ulong FreqBuf;    				// ulong ---> unsigned long = 32bits
     ulong Temp = Freq_mult_ulong;		// const ulong  Freq_mult_ulong  = 938250;
 
-    uchar Array_Freq[4];			     //将输入频率因子分为四个字节 Split the input frequency factor into four bytes" in English.
+    uchar Array_Freq[4];			     //Split the input frequency factor into four bytes
     Array_Freq[0] = (uchar)Freq;
     Array_Freq[1] = (uchar)(Freq >> 8);
     Array_Freq[2] = (uchar)(Freq >> 16);
@@ -301,7 +301,7 @@ void Freq_double_convert(double Freq)
 {
     ulong Low32;
     uint  High16;
-    double Temp = Freq_mult_doulle;   	          //23ca99为2的48次方除以120M
+    double Temp = Freq_mult_doulle;   	          //23ca99 is 2 to the power of 48 divided by 120M
     Freq *= (double)(Temp);
 //	1 0000 0000 0000 0000 0000 0000 0000 0000 = 4294967295
     High16 = (int)(Freq / 4294967295);                //2^32 = 4294967295
